@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Worklog 2025 — Layer 0 Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--surface:#161b22;--border:#2a3441;--accent:#58a6ff;--accent5:#ffa657;--text:#e6edf3;--text-muted:#8b949e;--green:#3fb950;--orange:#ffa657;--purple:#d2a8ff;--red:#f78166}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Be Vietnam Pro',sans-serif;font-size:14px;line-height:1.6}
+.container{max-width:900px;margin:0 auto;padding:48px 40px}
+.hero{text-align:center;padding:60px 0 48px;position:relative}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(88,166,255,.08) 0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:20px;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);font-size:12px;margin-bottom:20px}
+.hero h1{font-size:42px;font-weight:800;letter-spacing:-1px;background:linear-gradient(135deg,#e6edf3 0%,#58a6ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px}
+.hero p{color:var(--text-muted);font-size:15px;max-width:500px;margin:0 auto}
+
+/* STEP */
+.step{margin-bottom:32px;position:relative}
+.step-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:16px}
+.step-badge{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;flex-shrink:0;margin-top:2px}
+.step-badge.s0{background:rgba(210,168,255,.15);color:var(--purple);border:1px solid rgba(210,168,255,.3)}
+.step-badge.s1{background:rgba(88,166,255,.15);color:var(--accent);border:1px solid rgba(88,166,255,.3)}
+.step-badge.s2{background:rgba(63,185,80,.15);color:var(--green);border:1px solid rgba(63,185,80,.3)}
+.step-badge.s3{background:rgba(255,166,87,.15);color:var(--orange);border:1px solid rgba(255,166,87,.3)}
+.step-badge.s4{background:rgba(247,129,102,.15);color:var(--red);border:1px solid rgba(247,129,102,.3)}
+.step-badge.s5{background:rgba(210,168,255,.15);color:var(--purple);border:1px solid rgba(210,168,255,.3)}
+.step-badge.s6{background:rgba(63,185,80,.15);color:var(--green);border:1px solid rgba(63,185,80,.3)}
+
+.step-title-wrap{}
+.step-title{font-size:18px;font-weight:700;margin-bottom:4px}
+.step-subtitle{color:var(--text-muted);font-size:12px}
+
+.step-body{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-left:56px}
+
+.btn-tag{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;padding:3px 12px;border-radius:6px;background:rgba(63,185,80,.15);color:var(--green);border:1px solid rgba(63,185,80,.3)}
+.cell-tag{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);background:rgba(88,166,255,.1);padding:1px 6px;border-radius:4px}
+.sheet-tag{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--orange);background:rgba(255,166,87,.08);padding:1px 6px;border-radius:4px}
+.formula-tag{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--purple);background:rgba(210,168,255,.08);padding:1px 6px;border-radius:4px}
+
+.step-desc{color:var(--text-muted);font-size:13px;line-height:1.7;margin-bottom:12px}
+.step-desc:last-child{margin-bottom:0}
+
+.note-box{background:rgba(255,166,87,.06);border:1px solid rgba(255,166,87,.2);border-radius:8px;padding:12px 16px;margin-top:12px;font-size:12px;color:var(--orange);line-height:1.6}
+.note-box strong{color:var(--orange)}
+
+.info-box{background:rgba(88,166,255,.06);border:1px solid rgba(88,166,255,.2);border-radius:8px;padding:12px 16px;margin-top:12px;font-size:12px;color:var(--accent);line-height:1.6}
+
+.block-list{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.block-item{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 16px}
+.block-item-title{font-weight:700;font-size:13px;margin-bottom:6px;color:var(--text)}
+.block-item-desc{color:var(--text-muted);font-size:12px;line-height:1.6}
+
+.divider{border:none;border-top:1px solid var(--border);margin:40px 0}
+
+.flow-arrow{text-align:center;color:var(--text-muted);font-size:20px;margin:8px 0 8px 56px}
+
+.footer{border-top:1px solid var(--border);padding:24px 0;text-align:center;color:var(--text-muted);font-size:12px}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <div class="hero-badge">📋 Worklog — Layer 0</div>
+    <h1>Input Creation Guide</h1>
+    <p>From setting up All_Bug_Report to Refresh All_Input.</p>
+  </div>
+
+  <!-- STEP 0 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-badge s0">00</div>
+      <div class="step-title-wrap">
+        <div class="step-title">Set Up All_Bug_Report</div>
+        <div class="step-subtitle">Done once when adding a new project</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <div class="block-list">
+        <div class="block-item">
+          <div class="block-item-title">📊 Left Block — Daily Data</div>
+          <div class="block-item-desc">
+            <span class="cell-tag">A1</span> = <span class="formula-tag">Project</span> &nbsp;|&nbsp;
+            <span class="cell-tag">B1</span> = <span class="formula-tag">Date</span> &nbsp;|&nbsp;
+            <span class="cell-tag">C1</span> onward = member names (one column per member, contiguous — no blank columns in between)<br><br>
+            Member names must exactly match <span class="sheet-tag">REF_MEMBER</span>. Each row = 1 project × 1 date × bug count per member. Data is pulled automatically from project files via IMPORTRANGE.
+          </div>
+        </div>
+        <div class="block-item">
+          <div class="block-item-title">📋 Right Block — Project List</div>
+          <div class="block-item-desc">
+            Fill in: Project Code, Project Name, SpreadsheetId of the corresponding Google Sheet.<br><br>
+            Use the formula <span class="formula-tag">IMPORTRANGE("SpreadsheetId", "Workload!A1")</span> to pull data from the project file. Each project file must have a sheet <span class="sheet-tag">Workload</span> with the correct format.<br><br>
+            The first time you use IMPORTRANGE, click <strong>Allow access</strong> to grant access.
+          </div>
+        </div>
+      </div>
+      <div class="info-box">
+        💡 Once set up, the left block updates in real time when project files have new bugs — no need to redo this.
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-arrow">↓</div>
+
+  <!-- STEP 1 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-badge s1">01</div>
+      <div class="step-title-wrap">
+        <div class="step-title">Create Input Sheet</div>
+        <div class="step-subtitle">Run at the start of each month</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="step-desc">
+        Set <span class="cell-tag">Config!B1</span> = tháng &nbsp;|&nbsp; <span class="cell-tag">Config!B2</span> = năm
+        &nbsp;→&nbsp; Click nút <span class="btn-tag">▶ Tạo Input</span>
+      </p>
+      <p class="step-desc">
+        Script creates sheet <span class="sheet-tag">Input_xx</span> with all weekdays of the month and active members, pre-filling Date + Member columns.
+      </p>
+      <div class="note-box">
+        ⚠ <strong>Note:</strong> If <span class="sheet-tag">Input_xx</span> already exists, the script will create a new sheet named <span class="sheet-tag">Input_xx(1)</span>, <span class="sheet-tag">Input_xx(2)</span>... instead of overwriting. Check <span class="cell-tag">Config!B3</span> after creation to select the correct sheet.
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-arrow">↓</div>
+
+  <!-- STEP 2 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-badge s2">02</div>
+      <div class="step-title-wrap">
+        <div class="step-title">Refresh Sheet List</div>
+        <div class="step-subtitle">Run after creating a new Input sheet</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="step-desc">
+        Click nút <span class="btn-tag">▶ Refresh Sheet List</span>
+      </p>
+      <p class="step-desc">
+        Updates the dropdown at <span class="cell-tag">Config!B3</span> with the list of all <span class="sheet-tag">Input_*</span> sheets in the file. Select the target sheet before proceeding to the next step.
+      </p>
+    </div>
+  </div>
+
+  <div class="flow-arrow">↓</div>
+
+  <!-- STEP 3 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-badge s3">03</div>
+      <div class="step-title-wrap">
+        <div class="step-title">Import Bug Report</div>
+        <div class="step-subtitle">Pull bugs from All_Bug_Report into Input</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="step-desc">
+        Select target sheet in dropdown <span class="cell-tag">Config!B3</span> &nbsp;→&nbsp; Click nút <span class="btn-tag">▶ Import Bug Report</span>
+      </p>
+      <p class="step-desc">
+        Script reads <span class="sheet-tag">All_Bug_Report</span> and automatically fills Bug Report data into the selected Input sheet:
+      </p>
+      <div class="block-list">
+        <div class="block-item">
+          <div class="block-item-desc">✅ <strong>Existing row</strong> (same Date × Member × Project) → updates Output_Count</div>
+        </div>
+        <div class="block-item">
+          <div class="block-item-desc">➕ <strong>New row</strong> → appends to the bottom</div>
+        </div>
+        <div class="block-item">
+          <div class="block-item-desc">🔢 <strong>Duplicate row</strong> → removes duplicates, keeps the first occurrence</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-arrow">↓</div>
+
+  <!-- STEP 4 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-badge s4">04</div>
+      <div class="step-title-wrap">
+        <div class="step-title">Fill In Remaining Data</div>
+        <div class="step-subtitle">Done manually in the Input sheet</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="step-desc">Manually fill in the missing columns for each row:</p>
+      <div class="block-list">
+        <div class="block-item">
+          <div class="block-item-desc"><span class="cell-tag">J — Day Type</span> &nbsp;→&nbsp; Full / Half / Off / Holiday for each day</div>
+        </div>
+        <div class="block-item">
+          <div class="block-item-desc"><span class="cell-tag">D — Project</span> + <span class="cell-tag">E — Task</span> + <span class="cell-tag">F — Time Spent</span> + <span class="cell-tag">G — Output_Type</span> + <span class="cell-tag">H — Output_Count</span> &nbsp;→&nbsp; for non-Bug Report tasks</div>
+        </div>
+      </div>
+      <div class="info-box">
+        💡 Refer to the <strong>Input Guidelines</strong> for column-by-column filling rules.
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-arrow">↓</div>
+
+  <!-- STEP 5 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-badge s5">05</div>
+      <div class="step-title-wrap">
+        <div class="step-title">Check Bug Report</div>
+        <div class="step-subtitle">Run to verify data before submitting</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="step-desc">
+        Click nút <span class="btn-tag">▶ Check Bug Report</span>
+      </p>
+      <p class="step-desc">
+        Compares Bug Report data between <span class="sheet-tag">All_Bug_Report</span> and all <span class="sheet-tag">Input_*</span> sheets for the year set in <span class="cell-tag">Config!B2</span>. Results are written to <span class="sheet-tag">Config</span> columns J:Z in 3 groups:
+      </p>
+      <div class="block-list">
+        <div class="block-item">
+          <div class="block-item-desc">🔴 <strong>Missing</strong> — Exists in All_Bug_Report but not filled in any Input sheet</div>
+        </div>
+        <div class="block-item">
+          <div class="block-item-desc">🟡 <strong>Extra</strong> — Exists in Input but not found in All_Bug_Report</div>
+        </div>
+        <div class="block-item">
+          <div class="block-item-desc">🟠 <strong>Mismatch</strong> — Bug count does not match between the two sources</div>
+        </div>
+      </div>
+      <div class="note-box">
+        ⚠ <strong>Note:</strong> Script is read-only — it does not modify any data. If errors are found, go back to Step 3 or fix manually.
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-arrow">↓</div>
+
+  <!-- STEP 6 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-badge s6">06</div>
+      <div class="step-title-wrap">
+        <div class="step-title">Refresh All Input</div>
+        <div class="step-subtitle">Final step — merge everything into All_Input</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="step-desc">
+        Click nút <span class="btn-tag">▶ Refresh All Input</span>
+      </p>
+      <p class="step-desc">
+        Gom tất cả <span class="sheet-tag">Input_*</span> sheets into <span class="sheet-tag">All_Input</span>. This is the data source for the entire Layer 1+ pipeline.
+      </p>
+      <div class="info-box">
+        💡 Re-run this step whenever changes are made to any <span class="sheet-tag">Input_*</span> sheet.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Worklog - QA Team &nbsp;·&nbsp; @2026
+  </div>
+
+</div>
+</body>
+</html>

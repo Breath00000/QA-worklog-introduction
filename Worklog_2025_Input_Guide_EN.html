@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Worklog 2025 — Input Guidelines</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--surface:#161b22;--border:#2a3441;--accent:#58a6ff;--accent5:#ffa657;--text:#e6edf3;--text-muted:#8b949e;--full:#3fb950;--half:#ffa657;--off:#8b949e;--holiday:#d2a8ff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Be Vietnam Pro',sans-serif;font-size:14px;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:48px 40px}
+.hero{text-align:center;padding:60px 0 48px;position:relative}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(88,166,255,.08) 0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:20px;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);font-size:12px;margin-bottom:20px}
+.hero h1{font-size:48px;font-weight:800;letter-spacing:-1px;background:linear-gradient(135deg,#e6edf3 0%,#58a6ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px}
+.hero p{color:var(--text-muted);font-size:15px;max-width:500px;margin:0 auto}
+.section{margin-bottom:56px}
+.section-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.section-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.day-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.day-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;position:relative;overflow:hidden;transition:transform .2s,border-color .2s}
+.day-card:hover{transform:translateY(-2px)}
+.day-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:12px 12px 0 0}
+.day-card.full::before{background:var(--full)}.day-card.half::before{background:var(--half)}.day-card.off::before{background:var(--off)}.day-card.holiday::before{background:var(--holiday)}
+.day-card:hover.full{border-color:var(--full)}.day-card:hover.half{border-color:var(--half)}.day-card:hover.off{border-color:var(--off)}.day-card:hover.holiday{border-color:var(--holiday)}
+.day-icon{font-size:32px;margin-bottom:12px}
+.day-label{font-size:18px;font-weight:700;margin-bottom:6px;font-family:'JetBrains Mono',monospace}
+.day-card.full .day-label{color:var(--full)}.day-card.half .day-label{color:var(--half)}.day-card.off .day-label{color:var(--off)}.day-card.holiday .day-label{color:var(--holiday)}
+.day-desc{color:var(--text-muted);font-size:12px;margin-bottom:14px}
+.day-rule{font-size:12px;padding:6px 10px;border-radius:6px;background:var(--bg);border:1px solid var(--border);color:var(--text-muted);margin-bottom:8px}
+.day-rule strong{color:var(--text)}
+.day-pill{display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:2px 8px;border-radius:4px;margin:2px;font-weight:500}
+.pill-req{background:rgba(63,185,80,.15);color:var(--full);border:1px solid rgba(63,185,80,.3)}
+.pill-opt{background:rgba(88,166,255,.1);color:var(--accent);border:1px solid rgba(88,166,255,.2)}
+.pill-skip{background:rgba(139,148,158,.1);color:var(--text-muted);border:1px solid rgba(139,148,158,.2)}
+.col-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.col-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;transition:border-color .2s}
+.col-card:hover{border-color:#3a4455}
+.col-letter{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:var(--accent);background:rgba(88,166,255,.1);border:1px solid rgba(88,166,255,.2);border-radius:6px;padding:4px 8px;min-width:32px;text-align:center;flex-shrink:0}
+.col-letter.script{color:#3fb950;background:rgba(63,185,80,.1);border-color:rgba(63,185,80,.2)}
+.col-letter.formula{color:var(--text-muted);background:rgba(139,148,158,.1);border-color:rgba(139,148,158,.2)}
+.col-body{flex:1}
+.col-name{font-weight:700;font-size:14px;margin-bottom:4px}
+.col-format{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent5);background:rgba(255,166,87,.08);padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:6px}
+.col-note{color:var(--text-muted);font-size:12px;line-height:1.5;margin-bottom:6px}
+.col-note code{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:rgba(88,166,255,.1);padding:1px 5px;border-radius:3px}
+.col-badge{display:inline-flex;align-items:center;font-size:10px;padding:2px 8px;border-radius:20px;font-weight:600}
+.badge-req{background:rgba(63,185,80,.15);color:var(--full)}
+.badge-cond{background:rgba(255,166,87,.15);color:var(--half)}
+.badge-formula{background:rgba(139,148,158,.1);color:var(--text-muted)}
+.badge-script{background:rgba(63,185,80,.1);color:#3fb950}
+.badge-opt{background:rgba(88,166,255,.1);color:var(--accent)}
+.rules-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rule-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px}
+.rule-icon{font-size:24px;margin-bottom:10px}
+.rule-title{font-weight:700;font-size:13px;margin-bottom:6px}
+.rule-text{color:var(--text-muted);font-size:12px;line-height:1.6}
+.rule-text code{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:rgba(88,166,255,.1);padding:1px 5px;border-radius:3px}
+.footer{border-top:1px solid var(--border);padding:24px 0;text-align:center;color:var(--text-muted);font-size:12px}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <div class="hero-badge">📋 Worklog</div>
+    <h1>Input Guidelines</h1>
+    <p>A detailed guide from A to Z.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">⚡ General Rules</div>
+    <div class="rules-grid">
+      <div class="rule-card">
+        <div class="rule-icon">📄</div>
+        <div class="rule-title">1 row = 1 task</div>
+        <div class="rule-text">Each row represents one task per day. The same member can have multiple rows on the same day.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">⏱️</div>
+        <div class="rule-title">Total Time Spent</div>
+        <div class="rule-text"><code>Full</code>: 8h &nbsp;|&nbsp; <code>Half</code>: 4h &nbsp;|&nbsp; <code>Off/Holiday</code>: —</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">🐛</div>
+        <div class="rule-title">Bug Report</div>
+        <div class="rule-text">Can be filled manually or imported from <code>All_Bug_Report</code> via formula / script import.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">🔢</div>
+        <div class="rule-title">Output_Count</div>
+        <div class="rule-text">Fill in the output count for the task (Bug Report, Bug Checked, Test Case...).</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">📅</div>
+        <div class="rule-title">Fill All Weekdays</div>
+        <div class="rule-text">Fill all Mon→Fri including days off. Run script <code>createInputFromTemplate</code> to pre-generate Date + Member.</div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">⚠️</div>
+        <div class="rule-title">Column N — Validation</div>
+        <div class="rule-text">Shows <code>⚠</code> if member count is below total active members for that month. Check before submitting.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🗓️ Day Type</div>
+    <div class="day-cards">
+      <div class="day-card full">
+        <div class="day-icon">☀️</div>
+        <div class="day-label">Full</div>
+        <div class="day-desc">Full working day — 8 hours</div>
+        <div class="day-rule"><strong>Time Spent</strong> total = 8</div>
+        <div>
+          <span class="day-pill pill-req">✓ Project</span>
+          <span class="day-pill pill-req">✓ Task</span>
+          <span class="day-pill pill-req">✓ Time</span>
+          <span class="day-pill pill-opt">◎ Notes</span>
+        </div>
+      </div>
+      <div class="day-card half">
+        <div class="day-icon">🌤️</div>
+        <div class="day-label">Half</div>
+        <div class="day-desc">Half working day — 4 hours</div>
+        <div class="day-rule"><strong>Time Spent</strong> total = 4</div>
+        <div>
+          <span class="day-pill pill-req">✓ Project</span>
+          <span class="day-pill pill-req">✓ Task</span>
+          <span class="day-pill pill-req">✓ Time</span>
+          <span class="day-pill pill-opt">◎ Notes</span>
+        </div>
+      </div>
+      <div class="day-card off">
+        <div class="day-icon">💤</div>
+        <div class="day-label">Off</div>
+        <div class="day-desc">Day off</div>
+        <div class="day-rule"><strong>Only fill:</strong> Date + Member + Day Type</div>
+        <div>
+          <span class="day-pill pill-skip">✕ Project</span>
+          <span class="day-pill pill-skip">✕ Task</span>
+          <span class="day-pill pill-skip">✕ Time</span>
+          <span class="day-pill pill-opt">◎ Notes</span>
+        </div>
+      </div>
+      <div class="day-card holiday">
+        <div class="day-icon">🎉</div>
+        <div class="day-label">Holiday</div>
+        <div class="day-desc">Public holiday falling on Mon–Fri</div>
+        <div class="day-rule"><strong>Only fill:</strong> Date + Member + Day Type</div>
+        <div>
+          <span class="day-pill pill-skip">✕ Project</span>
+          <span class="day-pill pill-skip">✕ Task</span>
+          <span class="day-pill pill-skip">✕ Time</span>
+          <span class="day-pill pill-opt">◎ Notes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📊 Column Details</div>
+    <div class="col-grid">
+
+      <div class="col-card">
+        <div class="col-letter script">A</div>
+        <div class="col-body">
+          <div class="col-name">No</div>
+          <div class="col-format">1, 2, 3...</div>
+          <div class="col-note">Sequential integer starting from 1</div>
+          <span class="col-badge badge-script">▶ Run script first</span>
+        </div>
+      </div>
+
+      <div class="col-card">
+        <div class="col-letter script">B</div>
+        <div class="col-body">
+          <div class="col-name">Date</div>
+          <div class="col-format">dd-mmm-yyyy</div>
+          <div class="col-note">Ex: <code>01-Jan-2025</code> — 2-digit day, 3-letter English month abbreviation, 4-digit year. Please enter correctly as example for data synchronization.</div>
+          <span class="col-badge badge-script">▶ Run script first</span>
+        </div>
+      </div>
+
+      <div class="col-card">
+        <div class="col-letter script">C</div>
+        <div class="col-body">
+          <div class="col-name">Member</div>
+          <div class="col-format">Text</div>
+          <div class="col-note">Must match REF_MEMBER list</div>
+          <span class="col-badge badge-script">▶ Run script first</span>
+        </div>
+      </div>
+
+      <div class="col-card">
+        <div class="col-letter">D</div>
+        <div class="col-body">
+          <div class="col-name">Project</div>
+          <div class="col-format">[NWN2], [TRT]...</div>
+          <div class="col-note">Select from REF_PROJECT dropdown. Leave blank when Off/Holiday</div>
+          <span class="col-badge badge-cond">◉ Required when Full/Half</span>
+        </div>
+      </div>
+
+      <div class="col-card">
+        <div class="col-letter">E</div>
+        <div class="col-body">
+          <div class="col-name">Task</div>
+          <div class="col-format">Regression, Test...</div>
+          <div class="col-note">Select from REF_TASK_MAPPING dropdown. Leave blank when Off/Holiday</div>
+          <span class="col-badge badge-cond">◉ Required when Full/Half</span>
+        </div>
+      </div>
+
+      <div class="col-card">
+        <div class="col-letter">F</div>
+        <div class="col-body">
+          <div class="col-name">Time Spent</div>
+          <div class="col-format">0.5, 1, 1.5, 2...</div>
+          <div class="col-note">Integer or x.5 only. Daily total = 8 (Full) or 4 (Half). Leave blank when Off/Holiday</div>
+          <span class="col-badge badge-cond">◉ Required when Full/Half</span>
+        </div>
+      </div>
+
+      <div class="col-card">
+        <div class="col-letter">G</div>
+        <div class="col-body">
+          <div class="col-name">Output_Type</div>
+          <div class="col-format">Bug Report, Test Case...</div>
+          <div class="col-note">Must match REF_TASK_MAPPING. Leave blank when Off/Holiday</div>
+          <span class="col-badge badge-cond">◉ Required when Full/Half</span>
+        </div>
+      </div>
+
+      <div class="col-card">
+        <div class="col-letter">H</div>
+        <div class="col-body">
+          <div class="col-name">Output_Count</div>
+          <div class="col-format">1, 2, 3... (≥ 1)</div>
+          <div class="col-note">Output count for the task. Only fill when Output_Type = Bug Report / Bug Checked. </div>
+          <span class="col-badge badge-cond">◉ Only for BR / BC</span>
+        </div>
+      </div>
+
+      <div class="col-card">
+        <div class="col-letter">I</div>
+        <div class="col-body">
+          <div class="col-name">Notes</div>
+          <div class="col-format">Free text</div>
+          <div class="col-note">Optional. Recommended: fill in holiday name when Day Type = Holiday</div>
+          <span class="col-badge badge-opt">◎ Optional</span>
+        </div>
+      </div>
+
+      <div class="col-card">
+        <div class="col-letter">J</div>
+        <div class="col-body">
+          <div class="col-name">Day Type</div>
+          <div class="col-format">Full / Half / Off / Holiday</div>
+          <div class="col-note">Mandatory dropdown selection. Determines how the day is scored.</div>
+          <span class="col-badge badge-req">★ Mandatory</span>
+        </div>
+      </div>
+
+      <div class="col-card">
+        <div class="col-letter formula">K</div>
+        <div class="col-body">
+          <div class="col-name">Daily Hours</div>
+          <div class="col-format">Decimal, unit: hours</div>
+          <div class="col-note">Auto formula, do not fill manually</div>
+          <span class="col-badge badge-formula">⚙ Auto formula</span>
+        </div>
+      </div>
+
+      <div class="col-card">
+        <div class="col-letter formula">L</div>
+        <div class="col-body">
+          <div class="col-name">Target Hours</div>
+          <div class="col-format">Decimal, unit: hours</div>
+          <div class="col-note">Auto formula, do not fill manually</div>
+          <span class="col-badge badge-formula">⚙ Auto formula</span>
+        </div>
+      </div>
+
+      <div class="col-card">
+        <div class="col-letter formula">M</div>
+        <div class="col-body">
+          <div class="col-name">Status</div>
+          <div class="col-format">Text</div>
+          <div class="col-note">Auto formula, do not fill manually</div>
+          <span class="col-badge badge-formula">⚙ Auto formula</span>
+        </div>
+      </div>
+
+      <div class="col-card">
+        <div class="col-letter formula">N</div>
+        <div class="col-body">
+          <div class="col-name">Validation</div>
+          <div class="col-format">⚠ or blank</div>
+          <div class="col-note">Auto formula, do not fill manually. Shows ⚠ if member count for that day is below total active members for the month.</div>
+          <span class="col-badge badge-formula">⚙ Auto formula</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    Worklog — QA Team &nbsp;·&nbsp; @2026
+  </div>
+</div>
+</body>
+</html>
